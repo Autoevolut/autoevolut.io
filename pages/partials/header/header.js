@@ -1,4 +1,4 @@
-fetch("autoevolut.io/pages/partials/header/header.html")
+fetch("/autoevolut.io/pages/partials/header/header.html")
         .then(res => res.text())
         .then(html => {
         document.getElementById("header-placeholder").innerHTML = html;
