@@ -15,7 +15,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     typeLetter();
     });
-
-let header = document.getElementById("header-placeholder");
-header.innerHTML = "./pages/partials/header/header.html"
-    
