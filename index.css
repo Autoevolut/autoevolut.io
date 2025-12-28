@@ -391,11 +391,13 @@ main{
   .ctn-text-circle{
     margin-top: 2rem;
     width: 100%;
+    min-height: 4rem;
   }
 
   .ctn-text-step{
     height: 80%;
   }
+
 
 }
 
