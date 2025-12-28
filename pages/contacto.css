@@ -1,0 +1,290 @@
+/* ========== Reset ligero ========== */
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background_title {
+  width: 100%;
+  height: 35svh;
+  position: relative;
+  z-index: 0; 
+  background-image: linear-gradient(to bottom, var(--bgtransparent) 65%, var(--bg) 80%), url('./../../assets/images/background_title.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.background_title::before {
+  content: "";
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  z-index: 0;
+}
+
+#main-content {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative; 
+  z-index: 1;        
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background:linear-gradient(180deg, rgba(0,122,204,0.02), transparent 60%);
+}
+
+.main-content > .background_title{
+  position: relative;
+  z-index: 1; /* contenido encima */
+}
+
+.hero{
+  width: 100%;
+  height: 50%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+.hero-inner{
+  width: 100%;
+  height: 100%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+.title-div h1.blinking {
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--accent); }
+}
+
+#esperando{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.esperando-inner{
+  width: 90%;
+  border-radius:var(--radius);
+  background-color:var(--surface);
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.esperando-inner span{
+  color: var(--accent);
+}
+
+.esperando-inner p{
+  font-weight:600;
+}
+
+h3{
+  font-size: 1.7rem;
+}
+
+
+a:focus{ outline-offset:3px; }
+
+.contact-form {
+  width: 100%;
+  max-width: 660px;
+  margin: 1.5rem 0;
+}
+
+.contact-form h2 {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.field {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.field textarea {
+  resize: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+}
+
+/* FLOATING LABEL */
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-70%);
+  color: #94a3b8;
+  font-size: 14px;
+  pointer-events: none;
+  padding: 0 6px;
+  transition: 0.25s ease;
+}
+
+.field textarea + label {
+  top: 18px;
+  transform: none;
+}
+
+/* ACTIVE LABEL */
+.field textarea:focus + label,
+.field textarea:not(:placeholder-shown) + label {
+  top: -20px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label{
+  top: -8px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+/* BUTTON */
+.contact-form button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(32, 0, 42, 0.4);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 260px){
+
+  #esperando{height: 90%; margin-top: 5rem;}
+}
+
+/* ========== Larger screens (desktop) ========== */
+@media (min-width: 700px){
+  
+  .hero-inner{ padding:2.5rem 0; }
+  .hero h1{ font-size:2rem; }
+
+  .container{ width:92%; margin: auto;}
+  .section{flex-direction: row;}
+
+  #esperando{
+    width: 95%;
+    height: 60svh;
+    flex-direction: row;
+    background-color:var(--surface);
+    border-radius: var(--radius);
+  }
+
+  .esperando-inner{
+    width: 80%; 
+    height: 90%;
+    align-items: center;
+    margin: 0 0 0 10%;
+    padding: 0 1rem 0 0;
+    justify-content: space-around;
+    border-radius: 0 var(--radius) 0 var(--radius);
+  }
+
+  .esperando-inner:nth-child(2){
+    border-radius: 0 var(--radius) 0 var(--radius);
+  }
+
+  .esperando-inner:nth-child(1){
+    border-radius: var(--radius) 0 var(--radius) 0;
+  }
+
+  .contact-form h2 {
+    display: none;
+  }
+}
+
+/* Extra-large screens */
+@media (min-width: 1100px){
+  .hero h1{ font-size:2.4rem; }
+  .container{ width:88%; }
+  .section{flex-direction: row;}
+  #esperando{
+    width: 92%;
+    height: 63svh; 
+    justify-content: center; 
+    border-radius: var(--radius);
+  }
+ 
+  .esperando-inner{
+    width: 45%; 
+    height: 90%;
+    margin-left: 5%;
+    padding: 0 1rem 0 0;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .esperando-inner:nth-child(2){
+    border-radius: 0 var(--radius) 0 var(--radius);
+  }
+
+  .esperando-inner:nth-child(1){
+    border-radius: var(--radius) 0 var(--radius) 0;
+  }
+
+  .contact-form h2 {
+    display: none;
+  }
+}
