@@ -23,7 +23,7 @@ main{
   height: 35svh;
   position: relative;
   z-index: 0; 
-  background-image: linear-gradient(to bottom, var(--bgtransparent) 65%, var(--bg) 80%), url('./../../assets/images/background_title.png');
+  background-image: linear-gradient(to bottom, var(--bgtransparent) 65%, var(--bg) 80%), url('/autoevolut.io/assets/images/background_title.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
