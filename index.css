@@ -391,7 +391,7 @@ main{
   .ctn-text-circle{
     margin-top: 2rem;
     width: 100%;
-    min-height: 4rem;
+    min-height: 10rem;
   }
 
   .ctn-text-step{
