@@ -17,5 +17,5 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 let header = document.getElementById("header-placeholder");
-header.innerHTML = "./pages/partials/header.html"
+header.innerHTML = "./pages/partials/header/header.html"
     
